@@ -1,0 +1,946 @@
+@font-face {
+  font-family: CircularStd;
+  src: url("http://localhost/DJ4U_Konser/assets/font/CircularStd-Book.otf");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: CircularStdLight;
+  src: url("http://localhost/DJ4U_Konser/assets/font/CircularStd-Light.otf");
+}
+
+@font-face {
+  font-family: Russo;
+  src: url("http://localhost/DJ4U_Konser/assets/font/RussoOne-Regular.ttf");
+}
+
+@font-face {
+  font-family: NauSea;
+  src: url("http://localhost/DJ4U_Konser/assets/font/NauSea.otf");
+}
+
+@font-face {
+  font-family: Ubuntu;
+  src: url("http://localhost/DJ4U_Konser/assets/font/Ubuntu-Regular.ttf");
+}
+
+@font-face {
+  font-family: Sarpanch;
+  src: url('http://localhost/DJ4U_Konser/assets/font/Sarpanch-Regular.ttf');
+}
+
+@font-face {
+  font-family: Slope;
+  src: url('http://localhost/DJ4U_Konser/assets/font/Slope-Opera.otf');
+}
+
+@font-face {
+  font-family: Barcode;
+  src: url("http://localhost/DJ4U_Konser/assets/font/LibreBarcode128-Regular.ttf");
+}
+
+:root {
+  --primary: #075fd2;
+  --filter: #020f1cbd;
+  --shadow: #23a0d7;
+  --bg-color: #041631;
+  --secondary: #062341;
+  --dark: #020f1c;
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Slope;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.glassmorphism {
+  background: #00000033;
+  box-shadow: 0 4px 30px #0000001a;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  transition: 0.5s;
+}
+
+.btn {
+  cursor: pointer;
+}
+
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  position: fixed;
+  z-index: 10;
+  align-items: center;
+  height: 60px;
+}
+
+.navbar a {
+  font-family: CircularStd, sans-serif;
+  position: relative;
+  color: white;
+  font-size: larger;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.wrappernav {
+  margin-right: 20px;
+  margin-left: 20px;
+  position: relative;
+}
+
+.decor {
+  width: 100%;
+  bottom: 0;
+  translate: 0 10px;
+  position: absolute;
+  height: 5px;
+  border-radius: 20px;
+  background-color: #0c1719;
+  transition: 0.25s;
+}
+
+.wrappernav:hover .decor {
+  background-color: aliceblue;
+  transition: 0.5s;
+}
+
+.home {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 100vh;
+  background: url(http://localhost/DJ4U_Konser/assets/image/bg.png) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.filter_bg {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  opacity: 70%;
+  background-color: #020f1c;
+}
+
+.dj4u {
+  position: absolute;
+}
+
+.about {
+  height: 100vh;
+  width: 100%;
+  background-color: var(--bg-color);
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+}
+
+.penjelasan {
+  padding-top: 100px;
+  align-content: start;
+  letter-spacing: 4px;
+  color: white;
+}
+
+.jdul-about {
+  font-family: Slope;
+  padding-left: 40px;
+  text-align: left;
+  font-size: 50px;
+}
+
+.about-text {
+  padding-top: 70px;
+  font-family: Sarpanch;
+  text-align: left;
+  font-size: xx-large;
+  padding-left: 30px;
+}
+
+.gambar_about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section.latestCountdown {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 800px;
+  background: url(http://localhost/DJ4U_Konser/assets/image/footer.png) no-repeat center center;
+  background-size: cover;
+}
+
+.blur {
+  position: absolute;
+  width: 100%;
+  top: -50px;
+  height: 100px;
+  z-index: 1;
+  filter: blur(1rem);
+  background-color: #0a0f15e2;
+}
+
+.filter {
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  top: 0;
+  background: #0a0f15ea;
+  z-index: 0;
+}
+
+section.latestCountdown .countdownLatest {
+  z-index: 2;
+  color: #fff;
+  width: 80%;
+  height: 50%;
+  background-color: var(--bg-color);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.countdownLatest .countdownTitle {
+  font-family: Sarpanch;
+  font-size: 3rem;
+  text-align: center;
+  margin: 20px 10px;
+}
+
+.countdownTimer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 8rem;
+  max-height: 8rem;
+  width: 100%;
+  gap: 2rem;
+  color: #fff;
+}
+
+.countdownTimer .kotak {
+  position: relative;
+  width: 8rem;
+  height: 8rem;
+  background: var(--secondary);
+  border-radius: 10px;
+  font-family: CircularStd;
+}
+
+.countdownTimer .kotak div {
+  font-size: 4.5rem;
+  text-align: center;
+  font-weight: bold;
+  padding: 10px 0;
+}
+
+.countdownTimer .kotak p {
+  text-align: center;
+  margin: 0;
+}
+
+.garis {
+  display: flex;
+  height: 2px;
+  background-color: #fff;
+  width: 70%;
+  margin: 2rem 0;
+}
+
+.countdownLatest button {
+  font-family: CircularStd;
+  font-weight: bold;
+  background-color: var(--primary);
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  border-radius: 3px;
+  padding: 0.8rem 3rem;
+}
+
+section.gallery {
+  background-image: url(http://localhost/DJ4U_Konser/assets/image/jorik-kleen-unsplash.jpg);
+  width: 100%;
+  height: 700px;
+  image-resolution: 300dpi;
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 400px;
+  padding-top: 70px;
+  z-index: 3;
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.slide img {
+  width: 30%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.button-carousel {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.button-carousel.left {
+  left: 200px;
+}
+
+.button-carousel.right {
+  right: 200px;
+}
+
+.t-gallery {
+  text-align: center;
+  font-family: Slope;
+  padding-top: 80px;
+  z-index: 2;
+  font-size: xx-large;
+}
+
+.schedule {
+  background: var(--bg-color);
+  height: auto;
+  width: 100%;
+}
+
+.t-schedule {
+  text-align: center;
+  font-size: 50px;
+  padding-top: 80px;
+  /* margin-bottom: 7rem; */
+}
+
+.schbody {
+  height: 110vh;
+  /* background-color: rgba(255, 192, 203, 0.738); */
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  /* justify-content: space-evenly; */
+}
+
+.schbody .gambar-sch {
+  flex: 2;
+  width: 100%;
+  /* background-color: pink; */
+  display: flex;
+  justify-content: center;
+}
+
+.schbody .gambar-sch img {
+  height: 700px;
+}
+
+.garis-sch {
+  height: 80%;
+  width: 10px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.info-sch {
+  flex: 2;
+  display: flex;
+  /* justify-content: space-evenly; */
+  gap: 60px;
+  /* justify-content: center; */
+  align-items: center;
+  flex-direction: column;
+}
+
+.gris {
+  height: 70%;
+  width: 4px;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.wrp {
+  display: flex;
+  align-items: center;
+  width: 66%;
+  justify-content: space-around;
+  background-color: black;
+  height: 14rem;
+  color: white;
+  box-shadow: 5px 5px 5px 5px #23a1d77a;
+  font-size: 50px;
+  text-align: center;
+  border-radius: 15px;
+}
+
+.ticket {
+  background-image: url(http://localhost/DJ4U_Konser/assets/image/bg-tiket.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100vw;
+  position: relative;
+  height: 200vh;
+}
+
+.t-tkt {
+  z-index: 2;
+  position: relative;
+  padding-top: 8rem;
+  color: white;
+  font-family: NauSea;
+  font-size: 50px;
+  text-align: center;
+}
+
+.fltr-tkt {
+  height: inherit;
+  position: absolute;
+  z-index: 0;
+  width: inherit;
+  background-color: var(--filter);
+}
+
+.tkt-cntainer {
+  display: flex;
+  flex-direction: column;
+  height: 85%;
+  gap: 10rem;
+  width: inherit;
+  z-index: 2;
+  /* background-color: pink; */
+}
+
+.tkt-wrapper {
+  display: grid;
+  padding-left: 4rem;
+  align-items: center;
+  color: white;
+  /* justify-content: center; */
+  z-index: 2;
+  justify-items: center;
+  padding-right: 4rem;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.tkt-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.t-tmpat {
+  background-color: var(--primary);
+  font-family: Ubuntu;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  height: 70px;
+  align-items: center;
+  letter-spacing: 2px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.t-wktu {
+  font-family: Ubuntu;
+  font-weight: bold;
+  font-size: larger;
+  letter-spacing: 4px;
+}
+
+.tkt-gris {
+  rotate: 180deg;
+  width: 70%;
+  height: 5px;
+  border-radius: 10px;
+  background-color: var(--primary);
+}
+
+.tkt-wrapper a {
+  text-decoration: none;
+  width: 60%;
+}
+
+.btn-biru {
+  height: 70px;
+  border: none;
+  outline: none;
+  font-family: Russo;
+  cursor: pointer;
+  font-size: 24px;
+  color: white;
+  background-color: var(--primary);
+  border-radius: 10px;
+  transition: 0.3s;
+  width: inherit;
+}
+
+.tkt-wrapper .btn-solo {
+  background-color: var(--secondary);
+  cursor: not-allowed;
+}
+
+.tkt-wrapper .btn-solo:hover {
+  box-shadow: none;
+}
+
+.solo {
+  background-color: var(--secondary);
+  width: 300px;
+}
+
+.btn-biru:hover {
+  box-shadow: 5px 5px 5px var(--shadow);
+  background-color: var(--secondary);
+}
+
+footer.footer {
+  background-image: url(http://localhost/DJ4U_Konser/assets/image/footer.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  height: 25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+  width: 100vw;
+}
+
+footer.footer .f-ftr {
+  height: inherit;
+  position: absolute;
+  z-index: 0;
+  width: inherit;
+  background-color: rgba(0, 0, 0, 0.834);
+}
+
+.t-footer {
+  display: flex;
+  position: relative;
+  z-index: 1;
+  font-size: 60px;
+  gap: 2rem;
+  align-items: center;
+  color: white;
+  margin: 30px 0px;
+}
+
+.t-footer img {
+  height: 120px;
+}
+
+.f-icons {
+  z-index: 3;
+  display: flex;
+  gap: 2rem;
+  padding-top: 0;
+  margin-bottom: 50px;
+}
+
+.f-icons img {
+  height: 70px;
+}
+
+.f-copyright {
+  color: #fff;
+  font-size: 1.4rem;
+  z-index: 3;
+  font-family: CircularStd;
+}
+
+section.seat {
+  width: 100vw;
+  height: 100vh;
+  background: url(assets/image/dj-angkttngan.png);
+  background-size: cover;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.seat .filter {
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  top: 0;
+  background: hsla(213, 35%, 6%, 0.8);
+  z-index: 1;
+}
+
+.seat img {
+  position: absolute;
+  height: 80%;
+  z-index: 2;
+  filter: drop-shadow(1px 5px 5px var(--bg-color));
+}
+
+.ticket-info {
+  background-color: var(--dark);
+  position: relative;
+  width: 100vw;
+  height: 80vh;
+}
+
+.ticket-info .title {
+  text-align: center;
+  margin: 0;
+  padding-top: 80px;
+  color: #fff;
+  font-size: 5rem;
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+}
+
+.ticket-info .info {
+  display: flex;
+  color: #fff;
+  font-family: Sarpanch;
+  font-size: 2rem;
+  padding: 100px 100px;
+  display: flex;
+}
+
+.ticket-info .info .tanggal {
+  display: flex;
+  gap: 20px;
+  flex: 1;
+  align-items: center;
+}
+
+.ticket-info .info .lokasi {
+  display: flex;
+  gap: 20px;
+  flex: 1;
+  align-items: center;
+}
+
+.ticket-list {
+  width: 100vw;
+  height: 120vh;
+  background-color: var(--bg-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+.ticket-list .ticketClass {
+  display: grid;
+  grid-template-columns: 1.5fr 2fr 2fr 1fr;
+  background-color: black;
+  height: 14rem;
+  width: 85vw;
+  color: white;
+  box-shadow: 5px 5px 5px 5px #23a1d77a;
+  border-radius: 5px;
+  font-size: 2rem;
+  font-family: CircularStd;
+  padding: 20px;
+  gap: 30px;
+}
+
+.ticketClass .classLabel {
+  background-color: var(--secondary);
+  border-radius: 10px;
+  font-size: 4rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+}
+
+.ticketClass .ticket-stock,
+.ticketClass .ticket-price {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  gap: 20px;
+}
+
+.ticket-stock div:nth-child(2) {
+  font-size: 3rem;
+}
+
+.ticketClass .ticket-stock {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  gap: 20px;
+}
+
+.ticket-stock div:nth-child(2),
+.ticket-price div:nth-child(2) {
+  font-size: 3rem;
+}
+
+.ticketClass a {
+  width: 100%;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.form-wrapper {
+  width: 100vw;
+  position: fixed;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  top: 0;
+}
+
+.form-dataDiri {
+  transition: .5s;
+  user-select: none;
+  background-color: var(--dark);
+  color: #fff;
+  font-family: CircularStdLight;
+  display: flex;
+  flex-direction: column;
+  width: 85vw;
+  height: 95vh;
+  padding: 30px;
+  scale: .9;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px var(--shadow);
+}
+
+.form-dataDiri h1 {
+  font-size: 3.5rem;
+  border-bottom: 1px solid #ffffff7c;
+  padding-bottom: 10px;
+}
+
+.form-dataDiri .x {
+  color: #fff;
+  position: absolute;
+  font-weight: bold;
+  font-size: 2rem;
+  text-decoration: none;
+  right: 30px;
+  top: 20px;
+  cursor: pointer;
+}
+
+.form-dataDiri .input-data {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #ffffff7c;
+  padding-bottom: 40px;
+}
+
+.input-data input,
+.metode-pembayaran select,
+.metode-pembayaran select::after {
+  width: 95%;
+  color: #fff;
+  background: var(--dark);
+  border: 1px solid #fff;
+  padding: 8px;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.metode-pembayaran {
+  border-bottom: 1px solid #ffffff7c;
+  margin-bottom: 10px;
+}
+
+.input-data label {
+  font-size: 1.8rem;
+}
+
+.form-dataDiri button {
+  background-color: var(--primary);
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 2rem;
+  color: #fff;
+  width: 20vw;
+  padding: 5px;
+  margin: 20px;
+  cursor: pointer;
+}
+
+.kembali{
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 5;
+  scale: .5;
+  text-decoration: none;
+}
+
+.kembali button {
+  padding: 20px;
+}
+
+.payment{
+  width: 100vw;
+  height: 100vh;
+  background: url(assets/image/dj-angkttngan.png);
+  background-size: cover;  
+  font-family: CircularStd;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  gap: 1rem;
+  z-index: 2;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+}
+
+.payment * {
+  z-index: 2;
+}
+
+.payment h1{
+  color: red;
+  margin: 10px 0 0 0;
+  font-size: 2rem;
+}
+.payment p{
+  color: white;
+  margin: 0;
+}
+
+.barcode {
+  width: 70vw;
+  height: 15vh;
+  background-color: var(--secondary);
+  border-radius: 10px;
+  font-size: 14rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Barcode;
+  color: #fff;
+  letter-spacing: 10px;
+  padding-top: 70px;
+}
+
+.payment-info {
+  width: 60vw;
+  height: 40vh;
+  background-color: var(--secondary);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  font-size: 1.8rem;
+}
+
+.payment-info .left{
+  height: 90%;
+  flex: 3;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  justify-content: center;
+  padding-left: 40px;
+}
+
+.payment-info .mid{
+  width: 2px;
+  height: 90%;
+  background-color: #fff;
+}
+.payment-info .right{
+  height: 90%;
+  flex: 3;
+  padding-left: 40px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  justify-content: center;
+}
+
+.payment-info span {
+  color: #fff;
+  font-family: CircularStdLight;
+}
+
+.payment-info p {
+  color: #fff;
+  font-weight: bold;
+}
+
+.button-payment {
+  width: 90vw;
+  height: 8vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  padding-bottom: 20px;
+}
+
+.button-payment a{
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.button-payment button {
+  background-color: #023162;
+  width: 20%;
+  height: 90%;
+  border: none;
+  border-radius: 15px;
+}
